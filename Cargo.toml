@@ -1,0 +1,22 @@
+[package]
+name = "libmetal"
+version = "0.1.0"
+authors = ["Aliaksei Syrel <alex.syrel@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+metal = { git = "https://github.com/gfx-rs/metal-rs", rev = "4c1ad5b8a78fcb503364dbeac009ee056046f7a9" }
+boxer = { git = "https://github.com/feenkcom/gtoolkit-boxer", rev = "8ffd345b6aabda55c5ab1b4914f6f3e5f92918d4" }
+
+[lib]
+name = "Metal"
+crate-type = ["cdylib"]
+
+[profile.dev]
+opt-level = 0
+debug = true
+debug-assertions = true
+overflow-checks = true
+
+[profile.release]
+opt-level = 3
